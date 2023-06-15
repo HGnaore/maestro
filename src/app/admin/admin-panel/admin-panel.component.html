@@ -1,0 +1,97 @@
+<header class="bg-white">
+    <div class="p-2 bg-green"></div>
+    <div class="d-flex align-items-center border-bottom">
+        <div class="d-flex align-items-center p-3">
+            <h6 class="mb-0 ms-1 text-dark text-opacity-50">
+                <i class="fa fa-landmark fa-2x"></i>
+            </h6>
+        </div>
+        <ul class="menu mb-0">
+            <li class="my-dropdown">
+                <a class="my-dropdown-toggle dropdown-toggle" (click)="onToggle($event)">Menu</a>
+                <ul class="my-dropdown-menu">
+                    <li><a href="#"><i class="fas fa-cog me-2"></i> Paramètres</a></li>
+                    <li class="my-dropdown dropend">
+                        <a class="my-dropdown-toggle dropdown-toggle" (click)="onToggle($event)"><i class="fas fa-users me-2"></i> Gestion
+                            des utilisateurs</a>
+                        <ul class="my-dropdown-submenu">
+                            <li><a href="#"><i class="fas fa-users me-2"></i> Groupes</a></li>
+                            <li><a href="#"><i class="fas fa-user me-2"></i> Utilisateurs</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#"><i class="fas fa-upload me-2"></i> Importation</a></li>
+                    <li><a href="#"><i class="fas fa-print me-2"></i> Dossiers impression</a></li>
+                    <li><a href="#"><i class="fas fa-user-lock me-2"></i> Modifier mot de passe</a></li>
+                    <li><a href="#"><i class="fas fa-times me-2 text-danger"></i> Quitter</a></li>
+                </ul>
+            </li>
+            <li class="my-dropdown">
+                <a class="my-dropdown-toggle dropdown-toggle" (click)="onToggle($event)">Module Acquisition</a>
+                <ul class="my-dropdown-menu">
+                    <li><a href="#">Client</a></li>
+                    <li><a href="#">Fournisseur</a></li>
+                    <li><a href="#">Bon de commande</a></li>
+                    <li><a href="#">Famille</a></li>
+                    <li><a href="#">Nature du bien</a></li>
+                    <li><a href="#">Gestion des acquisitions</a></li>
+                    <li><a href="#">Liste des acquisitions en attente de code inventaire</a></li>
+                </ul>
+            </li>
+            <li class="my-dropdown">
+                <a class="my-dropdown-toggle dropdown-toggle" (click)="onToggle($event)">Module Inventaire</a>
+                <ul class="my-dropdown-menu">
+                    <li><a href="#">Gérer les emplacements</a></li>
+                    <li class="my-dropdown dropend">
+                        <a class="my-dropdown-toggle dropdown-toggle" (click)="onToggle($event)">QRCode</a>
+                        <ul class="my-dropdown-submenu">
+                            <li><a href="#">Bordereau</a></li>
+                            <li><a href="#">Localisation</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">Liste des biens orphelins</a></li>
+                    <li class="my-dropdown dropend">
+                        <a class="my-dropdown-toggle dropdown-toggle" (click)="onToggle($event)">Edition de la codification</a>
+                        <ul class="my-dropdown-submenu">
+                            <li><a href="#">Zones</a></li>
+                            <li><a href="#">Sites</a></li>
+                            <li><a href="#">Localisations</a></li>
+                            <li><a href="#">Biens</a></li>
+                            <li><a href="#">Borderaux</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">Recherche rapide d'un bien</a></li>
+                    <li><a href="#">Recherche avançée</a></li>
+                </ul>
+            </li>
+            <li class="my-dropdown">
+                <a class="my-dropdown-toggle dropdown-toggle" (click)="onToggle($event)">Module Mouvement</a>
+                <ul class="my-dropdown-menu">
+                    <li><a href="#">Mouvement de bien</a></li>
+                    <li><a href="#">Historique des transferts</a></li>
+                    <li><a href="#">Historique des propositions de mises au rébut et réactivation</a></li>
+                    <li><a href="#">Historique des validations de mises au rébut</a></li>
+                </ul>
+            </li>
+            <li class="my-dropdown">
+                <a class="my-dropdown-toggle dropdown-toggle" (click)="onToggle($event)">Module Amortissement</a>
+                <ul class="my-dropdown-menu">
+                    <li><a href="#">Vérification de plan d'amortissement</a></li>
+                    <li><a href="#">Amortissements par an</a></li>
+                    <li><a href="#">Amortissements journaliers</a></li>
+                    <li><a href="#">Générer les écritures comptables</a></li>
+                </ul>
+            </li>
+        </ul>
+        <ul class="menu mb-0 ms-auto">
+            <li>
+                <a href="#">
+                    <i class="fa fa-power-off me-2 text-warning"></i>
+                    Déconnexion
+                </a>
+            </li>
+        </ul>
+    </div>
+</header>
+<div class="container-fluid p-3">
+    <router-outlet></router-outlet>
+</div>

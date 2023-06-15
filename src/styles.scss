@@ -1,1 +1,30 @@
 /* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@400&family=Righteous:wght@400&display=swap');
+
+$primary-color: #02ae9dcc;
+$secondary-color: #5afaeadf;
+
+* {
+    font-family: 'Ubuntu';
+    font-size: small;
+}
+
+.text-green {
+    color: $primary-color;
+}
+
+.bg-green-light {
+    background-color: $secondary-color;
+}
+
+.bg-green {
+    background-color: $primary-color;
+}
+
+.bg-green-light {
+    background-color: $secondary-color;
+}
+
+.w-max {
+    width: max-content;
+}
