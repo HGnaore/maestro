@@ -17,6 +17,14 @@ export class AdminPanelComponent implements OnInit {
         element.classList.remove('selected');
       })
     }
+    else {
+      const elements = document.querySelectorAll('.selected');
+      elements.forEach(element => {
+        if (element.parentElement?.classList.contains('dropend')) {
+          element.classList.remove('selected');
+        }
+      })
+    }
     // Récupérer les informations de l'élément cliqué
     element.nextElementSibling?.classList.toggle('selected');
     // Transmettre les informations à votre composant Angular
