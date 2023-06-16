@@ -1,4 +1,4 @@
-<header class="bg-white">
+<header class="bg-white shadow-sm">
     <div class="p-2 bg-green"></div>
     <div class="d-flex align-items-center border-bottom">
         <div class="d-flex align-items-center p-3">
@@ -10,16 +10,18 @@
             <li class="my-dropdown">
                 <a class="my-dropdown-toggle dropdown-toggle" (click)="onToggle($event)">Menu</a>
                 <ul class="my-dropdown-menu">
-                    <li><a href="#" data-bs-toggle="modal" data-bs-target="#exampleModal1"><i class="fas fa-cog me-2"></i> Paramètres</a></li>
+                    <li><a href="#" data-bs-toggle="modal" data-bs-target="#exampleModal1"><i
+                                class="fas fa-cog me-2"></i> Paramètres</a></li>
                     <li class="my-dropdown dropend">
-                        <a class="my-dropdown-toggle dropdown-toggle" (click)="onToggle($event)"><i class="fas fa-users me-2"></i> Gestion
+                        <a class="my-dropdown-toggle dropdown-toggle" (click)="onToggle($event)"><i
+                                class="fas fa-users me-2"></i> Gestion
                             des utilisateurs</a>
                         <ul class="my-dropdown-submenu">
                             <li><a href="#"><i class="fas fa-users me-2"></i> Groupes</a></li>
                             <li><a href="#"><i class="fas fa-user me-2"></i> Utilisateurs</a></li>
                         </ul>
                     </li>
-                    <li><a href="#"><i class="fas fa-upload me-2"></i> Importation</a></li>
+                    <li><a routerLink="/admin/importation"><i class="fas fa-upload me-2"></i> Importation</a></li>
                     <li><a href="#"><i class="fas fa-print me-2"></i> Dossiers impression</a></li>
                     <li><a href="#"><i class="fas fa-user-lock me-2"></i> Modifier mot de passe</a></li>
                     <li><a href="#"><i class="fas fa-times me-2 text-danger"></i> Quitter</a></li>
@@ -50,7 +52,8 @@
                     </li>
                     <li><a href="#">Liste des biens orphelins</a></li>
                     <li class="my-dropdown dropend">
-                        <a class="my-dropdown-toggle dropdown-toggle" (click)="onToggle($event)">Edition de la codification</a>
+                        <a class="my-dropdown-toggle dropdown-toggle" (click)="onToggle($event)">Edition de la
+                            codification</a>
                         <ul class="my-dropdown-submenu">
                             <li><a href="#">Zones</a></li>
                             <li><a href="#">Sites</a></li>
@@ -92,77 +95,90 @@
         </ul>
     </div>
 </header>
-<div class="container-fluid p-3">
+<div class="container-fluid p-4">
     <router-outlet></router-outlet>
 </div>
 
-<!-- Modal création compte utilisateur -->
+<!-- Modal paramètre -->
 <div class="modal fade" id="exampleModal1" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered">
-        <div class="modal-content rounded-0">
-            <div class="modal-header bg-dark">
-                <h5 class="modal-title text-white" id="exampleModalLabel">
-                    <i class="ti ti-user-circle rounded-circle bg-white text-warning p-2"></i>
-                    Nouveau compte utilisateur </h5>
-                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close">
+        <div class="modal-content" style="border-radius: 5px;">
+            <div class="modal-header border-bottom-green" style="border-top-left-radius: 5px; border-top-right-radius: 5px;">
+                <h5 class="modal-title text-green text-uppercase" id="exampleModalLabel">
+                    <i class="fa fa-cog me-2"></i>
+                    Paramètres
+                </h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
                 </button>
             </div>
             <div class="modal-body">
-                <div class="row">
-                    <div class="col-12">
-                        <div class="form-group mb-3">
-                            <label class="form-label">Direction <span class="text-danger">*</span></label>
-                            <select class="form-select rounded-0">
-                                <option value="">-- Choisir la direction --</option>
-                            </select>
-                        </div>
+                <div class="d-flex mb-3">
+                    <button type="button" class="button rounded-0 {{ changeParametreTab == 0 ? 'blue active' : '' }}" (click)="changeParametreTab = 0"><i class="fa fa-building me-2"></i> Informations société</button>
+                    <button type="button" class="button rounded-0 {{ changeParametreTab == 1 ? 'blue active' : '' }}" (click)="changeParametreTab = 1"><i class="fa fa-print me-2"></i> Imprimante</button>
+                </div>
+
+                <!-- Contenu de la zone *Informations société* -->
+                <div class="setting-content p-3 border" *ngIf="changeParametreTab == 0">
+                    <div class="mb-3">
+                        <input type="text" class="input" placeholder="Raison sociale">
+                        <input type="text" class="input" placeholder="Adresse">
+                        <input type="text" class="input" placeholder="Contact">
                     </div>
-                    <div class="col-12">
-                        <div class="form-group mb-3">
-                            <label class="form-label">Nom & prénom(s) <span class="text-danger">*</span></label>
-                            <input type="text" class="form-control rounded-0" placeholder="p.ex. John Doe">
+
+                    <div class="d-flex align-items-center justify-content-center">
+                        <div>
+                            <div class="border d-flex align-items-center justify-content-center" style="width: 90px; height: 90px;">
+                                <label for="upload-logo" class="button blue pointer-cursor" data-bs-toggle="tooltip" data-bs-title="Importer un logo"><i class="fa fa-image"></i></label>
+                                <input type="file" id="upload-logo" class="d-none">
+                            </div>
+                            <div class="mt-2 d-flex justify-content-around">
+                                <button class="button">
+                                    <i class="fa fa-edit text-primary"></i>
+                                </button>
+                                <button class="button">
+                                    <i class="fa fa-trash text-danger"></i>
+                                </button>
+                            </div>
                         </div>
-                    </div>
-                    <div class="col-6">
-                        <div class="form-group mb-3">
-                            <label class="form-label">Email <span class="text-danger">*</span></label>
-                            <input type="text" class="form-control rounded-0" placeholder="p.ex. john.doe@mbaza.com">
-                        </div>
-                    </div>
-                    <div class="col-6">
-                        <div class="form-group mb-3">
-                            <label class="form-label">Contact <span class="text-danger">*</span></label>
-                            <input type="text" class="form-control rounded-0" placeholder="p.ex. +225 XX XX XX XX XX">
-                        </div>
-                    </div>
-                    <div class="col-12">
-                        <div class="form-group mb-3">
-                            <label class="form-label">Rôle <span class="text-danger">*</span></label>
-                            <select class="form-select rounded-0">
-                                <option value="">-- Attribuez un rôle --</option>
-                                <option value="">SUPER ADMINISTRATEUR</option>
-                                <option value="">ADMINISTRATEUR</option>
-                                <option value="">SECRETAIRE</option>
-                            </select>
-                        </div>
-                    </div>
-                    <div class="col-12">
-                        <div class="form-group mb-3">
-                            <label class="form-label">Définir un mot de passe <span class="text-danger">*</span></label>
-                            <input type="password" class="form-control rounded-0">
-                        </div>
-                    </div>
-                    <div class="col-12">
-                        <div class="form-check">
-                            <label class="form-check-label" for="automaticPassword">Générer un mot de passe</label>
-                            <input id="automaticPassword" type="checkbox" class="form-check-input rounded-0">
+                        <div class="ms-3">
+                            <div class="border d-flex align-items-center justify-content-center" style="width: 90px; height: 90px;">
+                                <label for="upload-qrcode" class="button blue pointer-cursor"><i class="fa fa-qrcode"></i></label>
+                                <input type="file" id="upload-qrcode" class="d-none">
+                            </div>
+                            <div class="mt-2 d-flex justify-content-around">
+                                <button class="button">
+                                    <i class="fa fa-edit text-primary"></i>
+                                </button>
+                                <button class="button">
+                                    <i class="fa fa-trash text-danger"></i>
+                                </button>
+                            </div>
                         </div>
                     </div>
                 </div>
+
+                <!-- Contenu de la zone *Imprimante* -->
+                <div class="setting-content p-3 border" *ngIf="changeParametreTab == 1">
+                    <div class="mb-3">
+                        <label class="form-label">Etiquette de l'imprimante</label>
+                        <select class="select">
+                            <option value="">-- Choisir l'imprimante --</option>
+                        </select>
+                        <input type="text" class="input">
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-label">Imprimante 14</label>
+                        <select class="select">
+                            <option value="">-- Choisir l'imprimante --</option>
+                        </select>
+                        <input type="text" class="input">
+                    </div>
+                </div>
             </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-warning" data-bs-dismiss="modal">Fermer</button>
-                <button type="button" class="btn btn-success">Créer</button>
+            <div class="modal-footer d-flex justify-content-center border-0">
+                <button type="button" class="button" data-bs-dismiss="modal">Fermer <i class="fa fa-times ms-2 text-danger"></i></button>
+                <button type="button" class="button green">Enregistrer <i class="fa fa-save ms-2"></i></button>
             </div>
         </div>
     </div>

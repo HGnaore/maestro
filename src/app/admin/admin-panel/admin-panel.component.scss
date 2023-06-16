@@ -1,5 +1,6 @@
 @mixin dropdownStyles {
     position: absolute;
+    z-index: 1;
     border-radius: 5px;
     padding: 10px 20px;
     width: max-content;
@@ -30,6 +31,10 @@
             color: #555;
             display: inline-block;
             width: 100%;
+
+            &.active {
+                color: #02ae9dcc;
+            }
         }
     }
 }

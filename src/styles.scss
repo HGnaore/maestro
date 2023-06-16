@@ -2,29 +2,103 @@
 @import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@400&family=Righteous:wght@400&display=swap');
 
 $primary-color: #02ae9dcc;
-$secondary-color: #5afaeadf;
+$secondary-color: #0b9ce0;
 
 * {
     font-family: 'Ubuntu';
     font-size: small;
+    color: #555;
+}
+
+html {
+    filter: blur(.25px);
+}
+
+table {
+    thead tr td {
+        font-size: 10px;
+        font-weight: bold;
+    }
 }
 
 .text-green {
     color: $primary-color;
 }
 
-.bg-green-light {
-    background-color: $secondary-color;
+.border-bottom-green {
+    border-bottom: 1px solid $primary-color;
+}
+
+.text-second-color {
+    color: $secondary-color;
 }
 
 .bg-green {
     background-color: $primary-color;
 }
 
-.bg-green-light {
+.bg-second {
     background-color: $secondary-color;
 }
 
 .w-max {
     width: max-content;
+}
+
+.pointer-cursor {
+    cursor: pointer;
+}
+
+.input, .select {
+    outline: none;
+    border-radius: 3px;
+    padding: 0.4rem 0.7rem;
+    display: block;
+    margin-bottom: 5px;
+    width: 100%;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+
+    &:focus {
+        border: 1px solid $secondary-color;
+        box-shadow: 0px 1px 3px rgba(137, 137, 137, 0.32);
+    }
+}
+
+.box-shadow {
+    box-shadow: 0px 1px 3px rgba(137, 137, 137, 0.32);
+}
+
+.scale-2 {
+    transform: scale(1.1);
+}
+
+.button {
+    outline: none;
+    border-radius: 3px;
+    padding: 0.4rem 0.7rem;
+    border: none;
+    width: max-content;
+    transition: all 0.2s;
+
+    &:hover, &.active {
+        background-color: rgb(190, 190, 190);
+    }
+
+    &.green {
+        background-color: $primary-color;
+        color: white;
+
+        &:hover, &.active {
+            background-color: darken($color: $primary-color, $amount: 10);
+        }
+    }
+
+    &.blue {
+        background-color: $secondary-color;
+        color: white;
+
+        &:hover, &.active {
+            background-color: darken($color: $secondary-color, $amount: 10);
+        }
+    }
 }

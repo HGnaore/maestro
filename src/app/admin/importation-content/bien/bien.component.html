@@ -1,0 +1,67 @@
+<div class="col-12">
+    <div class="mb-3 d-flex align-items-center">
+        <input type="text" class="input mb-0 me-3" placeholder="Fichier bien">
+        <label for="import-file" class="button green me-3 pointer-cursor"><i class="fa fa-file-import"></i></label>
+        <input type="file" class="d-none" id="import-file">
+        <button class="button w-25">
+            <i class="fa fa-cogs"></i> Lancer le traitement
+        </button>
+    </div>
+</div>
+
+<div class="table-responsive">
+    <table class="table table-striped table-bordered">
+        <thead class="table-success">
+            <tr>
+                <td align="center">CODE LOCALISATION.</td>
+                <td align="center">CODE INVENTAIRE.</td>
+                <td align="center">REFERENCE.</td>
+                <td align="center">DESCRIPTION.</td>
+                <td align="center">ETAT.</td>
+                <td align="center">SERVICE.</td>
+                <td align="center">MISE AU REBU.</td>
+                <td align="center">NOTE.</td>
+                <td align="center">EST SUPPRIME.</td>
+                <td align="center">TRIM.</td>
+                <td align="center">CODE FAMILLE.</td>
+                <td align="center">FAMILLE.</td>
+                <td align="center">CODE TYPE.</td>
+                <td align="center">TYPE.</td>
+                <td></td>
+            </tr>
+        </thead>
+        <tbody>
+            <ng-container *ngFor="let n of [].constructor(7)">
+                <tr>
+                    <td align="center">0829</td>
+                    <td align="center">Yopougon</td>
+                    <td align="center">0829</td>
+                    <td align="center">Yopougon</td>
+                    <td align="center">Yopougon</td>
+                    <td align="center">Yopougon</td>
+                    <td align="center">Yopougon</td>
+                    <td align="center">Yopougon</td>
+                    <td align="center">Yopougon</td>
+                    <td align="center">Yopougon</td>
+                    <td align="center">Yopougon</td>
+                    <td align="center">Yopougon</td>
+                    <td align="center">Yopougon</td>
+                    <td align="center">Yopougon</td>
+                    <td></td>
+                </tr>
+            </ng-container>
+        </tbody>
+        <tfoot>
+            <tr>
+                <td colspan="15" align="center" class="py-4">
+                    <button class="button green">
+                        Enregistrer <i class="fa fa-save ms-2"></i>
+                    </button>
+                    <button class="button ms-3">
+                        Annuler <i class="fa fa-times text-danger ms-2"></i>
+                    </button>
+                </td>
+            </tr>
+        </tfoot>
+    </table>
+</div>

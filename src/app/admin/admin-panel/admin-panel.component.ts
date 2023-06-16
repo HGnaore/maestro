@@ -6,6 +6,9 @@ import { Component, HostListener, OnInit } from '@angular/core';
   styleUrls: ['./admin-panel.component.scss']
 })
 export class AdminPanelComponent implements OnInit {
+
+  changeParametreTab: number = 0;
+
   ngOnInit(): void {
   }
 
@@ -25,10 +28,7 @@ export class AdminPanelComponent implements OnInit {
         }
       })
     }
-    // Récupérer les informations de l'élément cliqué
     element.nextElementSibling?.classList.toggle('selected');
-    // Transmettre les informations à votre composant Angular
-    // Faites quelque chose avec les informations récupérées
   }
 
   @HostListener('document:click', ['$event'])

@@ -1,0 +1,36 @@
+<div class="animate__animated animate__fadeIn">
+    <h1 class="text-second-color">Importation des données</h1>
+    <hr class="mb-4">
+    <div class="d-flex mb-3">
+        <button type="button" class="button {{ changeTabImportation == 0 ? 'blue active scale-2 box-shadow rounded' : 'rounded-0' }}" (click)="changeTabImportation = 0">Zones</button>
+        <button type="button" class="button {{ changeTabImportation == 1 ? 'blue active scale-2 box-shadow rounded' : 'rounded-0' }}" (click)="changeTabImportation = 1">Sites</button>
+        <button type="button" class="button {{ changeTabImportation == 2 ? 'blue active scale-2 box-shadow rounded' : 'rounded-0' }}" (click)="changeTabImportation = 2">Localisations</button>
+        <button type="button" class="button {{ changeTabImportation == 3 ? 'blue active scale-2 box-shadow rounded' : 'rounded-0' }}" (click)="changeTabImportation = 3">Bordereaux</button>
+        <button type="button" class="button {{ changeTabImportation == 4 ? 'blue active scale-2 box-shadow rounded' : 'rounded-0' }}" (click)="changeTabImportation = 4">Biens</button>
+    </div>
+    
+    <!-- Contenu de la tab *Zones* -->
+    <div class="setting-content p-3 border" *ngIf="changeTabImportation == 0">
+        <app-zone></app-zone>
+    </div>
+
+    <!-- Contenu de la tab *Sites* -->
+    <div class="setting-content p-3 border" *ngIf="changeTabImportation == 1">
+        <app-site></app-site>
+    </div>
+
+    <!-- Contenu de la tab *Localisations* -->
+    <div class="setting-content p-3 border" *ngIf="changeTabImportation == 2">
+        <app-localisation></app-localisation>
+    </div>
+
+    <!-- Contenu de la tab *Bordereaux* -->
+    <div class="setting-content p-3 border" *ngIf="changeTabImportation == 3">
+        <app-bordereau></app-bordereau>
+    </div>
+
+    <!-- Contenu de la tab *Biens* -->
+    <div class="setting-content p-3 border" *ngIf="changeTabImportation == 4">
+        <app-bien></app-bien>
+    </div>
+</div>
