@@ -9,6 +9,8 @@ import { SiteComponent } from './importation-content/site/site.component';
 import { LocalisationComponent } from './importation-content/localisation/localisation.component';
 import { BordereauComponent } from './importation-content/bordereau/bordereau.component';
 import { BienComponent } from './importation-content/bien/bien.component';
+import { UtilisateurComponent } from './utilisateur/utilisateur.component';
+import { DossierImpressionComponent } from './dossier-impression/dossier-impression.component';
 
 
 @NgModule({
@@ -19,7 +21,9 @@ import { BienComponent } from './importation-content/bien/bien.component';
     SiteComponent,
     LocalisationComponent,
     BordereauComponent,
-    BienComponent
+    BienComponent,
+    UtilisateurComponent,
+    DossierImpressionComponent
   ],
   imports: [
     CommonModule,

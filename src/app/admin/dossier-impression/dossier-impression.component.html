@@ -1,0 +1,65 @@
+<div class="animate__animated animate__fadeIn">
+    <h1 class="text-second-color">Génération des dossiers d'impression</h1>
+    <hr class="mb-4">
+    <div class="row mb-3">
+        <div class="col-3">
+            <div class="d-flex align-items-center">
+                <select class="select mb-0">
+                    <option value="">Tous les réseaux</option>
+                </select>
+            </div>
+        </div>
+        <div class="col-3">
+            <select class="select mb-0">
+                <option value="">Tous les sites</option>
+            </select>
+        </div>
+        <div class="col-6 d-flex justify-content-end">
+            <button class="button">
+                <i class="fa fa-sync me-2 text-second-color"></i> Actualiser
+            </button>
+            <button class="button ms-2 orange">
+                <i class="fa fa-print me-2"></i> Imprimer la fiche
+            </button>
+            <button class="button ms-2 orange">
+                <i class="fa fa-qrcode me-2"></i> Imprimer QRCode
+            </button>
+            <button class="button ms-2 orange">
+                <i class="fa fa-qrcode me-2"></i> Imprimer QRCode A4
+            </button>
+        </div>
+    </div>
+    
+    <div class="table-responsive">
+        <table class="table table-striped table-bordered">
+            <thead class="table-success">
+                <tr>
+                    <td align="center">CODE ZONE.</td>
+                    <td align="center">ZONE.</td>
+                    <td align="center">CODE SITE.</td>
+                    <td align="center">SITE.</td>
+                    <td align="center">CODE INVENTAIRE.</td>
+                    <td align="center">DESCRIPTION.</td>
+                    <td align="center">CODE LOCALISATION.</td>
+                    <td align="center">LOCALISATION.</td>
+                    <td></td>
+                </tr>
+            </thead>
+            <tbody>
+                <ng-container *ngFor="let n of [].constructor(10)">
+                    <tr>
+                        <td align="center">0829</td>
+                        <td align="center">Yopougon</td>
+                        <td align="center">0829</td>
+                        <td align="center">Yopougon</td>
+                        <td align="center">0829</td>
+                        <td align="center">0829</td>
+                        <td align="center">Yopougon</td>
+                        <td align="center">0829</td>
+                        <td></td>
+                    </tr>
+                </ng-container>
+            </tbody>
+        </table>
+    </div>
+</div>
